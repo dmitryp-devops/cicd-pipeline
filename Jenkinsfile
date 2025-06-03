@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Run') {
             steps {
-                sh "docker stop ${GIT_BRANCH}"
+                sh "docker stop ${GIT_BRANCH}||true"
                 sh "docker run -d --name ${GIT_BRANCH} -p 3001:3000 --rm node${GIT_BRANCH}:v1.0"
             }
         }
