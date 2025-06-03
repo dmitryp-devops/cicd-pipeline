@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${GIT_BRANCH}", url: 'ssh://git@github.com:dmitryp-devops/cicd-pipeline.git', credentialsId: 'github'
+                git branch: "${GIT_BRANCH}", url: 'git@github.com:dmitryp-devops/cicd-pipeline.git', credentialsId: 'github'
             }
         }
         stage('Build') {
